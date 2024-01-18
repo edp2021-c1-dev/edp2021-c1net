@@ -1,0 +1,92 @@
+body {
+    font-family: 'San Francisco';
+    background-color: #333;
+    color: white;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.welcome-text {
+    --opacity: calc((var(--scrolled) - var(--num) * 50) / 25 - 1);
+    opacity: var(--opacity);
+    font-weight: bold;
+    align-self: flex-start;
+    font-size: var(--font-size);
+}
+
+.welcome-text.right {
+    align-self: flex-end;
+}
+
+.buttoncontainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 24px;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0px;
+}
+
+.buttonpadding {
+    display: inline-block;
+    background-color: #666;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 100px;
+    margin: auto;
+    user-select: none;
+    height: fit-content;
+    min-height: 0px;
+    min-width: 0px;
+    z-index: 5;
+    line-height: 0px;
+    box-shadow: 5px 5px 10px #222;
+}
+
+.button {
+    --size: 0px;
+    height: var(--size);
+    width: var(--size);
+    font-size: 24px;
+    line-height: 36px;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    color: #FFFFFF00;
+    background-color: #3399cc;
+    border-radius: inherit;
+    cursor: pointer;
+    z-index: 7;
+    vertical-align: middle;
+    position: relative;
+    box-shadow: 5px 5px 10px #555;
+}
+
+.button:hover {
+    transform: translate3d(-2px, -2px, 0px);
+}
+
+.login-text {
+    text-decoration: none;
+    color: #3399cc;
+    margin-top: -36px;
+    transition: margin-top 0.5s ease-in-out;
+    font-size: 24px;
+    line-height: 36px;
+    display: none;
+    z-index: 6;
+    position: relative;
+    cursor: pointer;
+    
+}

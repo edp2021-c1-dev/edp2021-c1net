@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <script src="https://cdn.jsdelivr.net/npm/@triggerjs/trigger" defer></script>
+    <link href="/static/css/oyzrakioi-theme-v0.0.1.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/sanfrancisco-font.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="welcome" tg-bezier="easeInOut" tg-name="_" tg-ref="container" tg-from="0" tg-to="200" tg-step="0.1">
+            <div windowheight style="height: calc(var(--windowheight) * 1px);"></div>
+            <span class="welcome-text" tg-name="scrolled" tg-follow="container" style="--num: 0;" tg-font>Hi
+                there!</span>
+            <div windowheight style="height: calc(var(--windowheight) * 0.5px);"></div>
+            <span class="welcome-text right" tg-name="scrolled" tg-follow="container" style="--num: 1;" tg-font>Hi
+                there!</span>
+            <div windowheight style="height: calc(var(--windowheight) * 1px);"></div>
+        </div>
+        <div class="buttoncontainer">
+            <div class="buttonpadding">
+                <div class="button"></div>
+                <div class="login-text">Already have?</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let ticking = false;
+        window.onload = () => {
+            document.getElementsByClassName('button')[0].style.setProperty('--size', '36px'); 
+            setTimeout(() => { 
+                document.getElementsByClassName('button')[0].style.setProperty('width', '186.24px'); 
+                setTimeout(() => { 
+                    document.getElementsByClassName('button')[0].style.setProperty('color', '#FFFFFF'); 
+                    document.getElementsByClassName('button')[0].innerText = "> Sign up <";
+                    document.getElementsByClassName('login-text')[0].style.setProperty('display', 'block');  
+                    setTimeout(() => {
+                        document.getElementsByClassName('buttonpadding')[0].style.setProperty('border-radius', '18px');
+                        document.getElementsByClassName('login-text')[0].style.setProperty('margin-top', '0px');
+                    }, 250);
+                }, 500); 
+            }, 150);
+        };
+        document.querySelectorAll(`[windowheight]`).forEach((element) => {
+            element.style.setProperty(`--windowheight`, window.innerHeight);
+        })
+        window.addEventListener('resize', () => {
+            document.querySelectorAll(`[windowheight]`).forEach((element) => {
+                element.style.setProperty(`--windowheight`, window.innerHeight);
+            })
+        })
+        document.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    document.querySelectorAll(`[tg-font]`).forEach((element) => {
+                        let fontsize = (element.style.getPropertyValue('--scrolled') - element.style.getPropertyValue('--num') * 50) * 0.84 + 24;
+                        fontsize = Math.min(fontsize, 108);
+                        fontsize = Math.max(fontsize, 24);
+                        element.style.setProperty(`--font-size`, `${fontsize}px`);
+                    })
+                    ticking = false;
+                })
+            }
+            ticking = true;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'San Francisco';
+    src: url("/static/fonts/sf-pro-display_regular.woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'San Francisco';
+    src: url("/static/fonts/sf-pro-display_semibold.woff2");
+    font-weight: bold;
+}
