@@ -1,0 +1,33 @@
+{
+  "name": "edp2021-c1net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/edp2021-c1net/edp2021-c1net.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -b -verbose",
+    "run": "node ./dist/edp2021-c1net.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edp2021-c1-dev/edp2021-c1net.git"
+  },
+  "author": "edp2021-c1-dev",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/edp2021-c1-dev/edp2021-c1net/issues"
+  },
+  "homepage": "https://github.com/edp2021-c1-dev/edp2021-c1net#readme",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.5",
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.0.9",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "stream": "^0.0.2"
+  }
+}

@@ -1,0 +1,7 @@
+logging:
+  logLevel: 0
+  logIntoConsole: true
+  logIntoFile: true
+  logPath: '/Volumes/School/edp2021-c1net/logs'
+global:
+  workspace: '/Volumes/School/edp2021-c1net'
